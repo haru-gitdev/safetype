@@ -26,7 +26,7 @@ A floating text editor you can summon from anywhere with a global hotkey. Write 
 
 ### macOS
 
-1. Download the latest `.dmg` from [Releases](https://github.com/haru-gitdev/compose-paste/releases)
+1. Download the latest `.dmg` from [Releases](https://github.com/haru-gitdev/safetype/releases)
 2. Open the DMG and drag `Safetype.app` to your Applications folder
 3. On first launch, grant Accessibility permission:
    - Go to **System Settings > Privacy & Security > Accessibility**
@@ -40,8 +40,8 @@ Prerequisites:
 
 ```bash
 # Clone the repository
-git clone https://github.com/haru-gitdev/compose-paste.git
-cd compose-paste
+git clone https://github.com/haru-gitdev/safetype.git
+cd safetype
 
 # Install dependencies
 bun install

@@ -26,7 +26,7 @@
 
 ### macOS
 
-1. [Releases](https://github.com/haru-gitdev/compose-paste/releases) から最新の `.dmg` をダウンロード
+1. [Releases](https://github.com/haru-gitdev/safetype/releases) から最新の `.dmg` をダウンロード
 2. DMGを開いて `Safetype.app` をアプリケーションフォルダにドラッグ
 3. 初回起動時にアクセシビリティ権限を許可:
    - **システム設定 > プライバシーとセキュリティ > アクセシビリティ** を開く
@@ -40,8 +40,8 @@
 
 ```bash
 # リポジトリをクローン
-git clone https://github.com/haru-gitdev/compose-paste.git
-cd compose-paste
+git clone https://github.com/haru-gitdev/safetype.git
+cd safetype
 
 # 依存関係をインストール
 bun install
