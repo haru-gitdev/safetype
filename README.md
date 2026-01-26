@@ -1,30 +1,36 @@
-# Compose & Paste
+# Safetype
 
-A simple macOS/Windows app that provides a floating text editor triggered by a global hotkey. Write your text, press a shortcut, and it automatically pastes into the previously active application.
+> [!NOTE]
+> :jp: [日本語版 / Japanese](README.ja.md)
+
+Ever accidentally sent an unfinished message while typing in a chat app or AI prompt?
+
+**Safetype** puts an end to that frustration.
+
+A floating text editor you can summon from anywhere with a global hotkey. Write your message in peace, then paste it into the previous app with a single keystroke. No more "Enter accidents."
+
+## Perfect for
+
+- **Slack / Teams / Discord** - Compose longer messages without pressure
+- **ChatGPT / Claude** - Refine your prompts before sending
+- **Tiny input fields** - Get a proper writing space for forms and comments
 
 ## Features
 
-- **Global Hotkey**: Press `Cmd+Shift+Space` (macOS) to open the floating editor from anywhere
-- **Quick Paste**: Press `Cmd+Enter` to copy text to clipboard and automatically paste it into the previous app
-- **Always on Top**: The editor window stays above other windows
-- **Cancel Anytime**: Press `Esc` to close without pasting
-- **Cross-Platform**: Works on macOS (Windows support planned)
-
-## Use Cases
-
-- Writing messages in apps with small input fields (Slack, Teams, etc.)
-- Composing longer text before pasting into forms
-- Having a consistent text editor experience across all applications
+- :keyboard: **Global Hotkey** - Press `Cmd+Shift+Space` to summon from any app
+- :clipboard: **One-Action Paste** - `Cmd+Enter` copies and pastes to the previous app
+- :pushpin: **Always on Top** - Never loses focus to other windows
+- :x: **Esc to Cancel** - Changed your mind? Just close it
 
 ## Installation
 
 ### macOS
 
 1. Download the latest `.dmg` from [Releases](https://github.com/haru-gitdev/compose-paste/releases)
-2. Open the DMG and drag `Compose & Paste.app` to your Applications folder
+2. Open the DMG and drag `Safetype.app` to your Applications folder
 3. On first launch, grant Accessibility permission:
    - Go to **System Settings > Privacy & Security > Accessibility**
-   - Add and enable `Compose & Paste.app`
+   - Add and enable `Safetype.app`
 
 ### Build from Source
 

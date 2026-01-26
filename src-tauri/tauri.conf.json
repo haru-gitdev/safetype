@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Compose & Paste",
+  "productName": "Safetype",
   "version": "0.1.0",
-  "identifier": "com.haruya.compose-paste",
+  "identifier": "com.haruya.safetype",
   "build": {
     "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",
@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "Compose & Paste",
+        "title": "Safetype",
         "width": 500,
         "height": 300,
         "resizable": true,
