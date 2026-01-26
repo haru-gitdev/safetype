@@ -1,6 +1,5 @@
 use tauri::Manager;
 use enigo::{Enigo, Keyboard, Settings, Key, Direction};
-use std::process::Command;
 use std::thread;
 use std::time::Duration;
 
