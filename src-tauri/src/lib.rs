@@ -54,6 +54,14 @@ pub fn run() {
             let _window = app.get_webview_window("main").unwrap();
             Ok(())
         })
+        .on_window_event(|window, event| {
+            // 赤ボタン（閉じるボタン）を押したときの処理
+            if let tauri::WindowEvent::CloseRequested { api, .. } = event {
+                // ウィンドウを閉じずに非表示にする
+                api.prevent_close();
+                window.hide().unwrap();
+            }
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

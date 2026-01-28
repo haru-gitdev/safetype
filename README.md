@@ -21,6 +21,7 @@ A floating text editor you can summon from anywhere with a global hotkey. Write 
 - :clipboard: **One-Action Paste** - `Cmd+Enter` copies and pastes to the previous app
 - :pushpin: **Always on Top** - Never loses focus to other windows
 - :x: **Esc to Cancel** - Changed your mind? Just close it
+- :gear: **Background Mode** - Closing the window hides it; the app keeps running in the background
 
 ## Installation
 
