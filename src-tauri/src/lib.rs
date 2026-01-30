@@ -1,4 +1,5 @@
-use tauri::Manager;
+use tauri::{Manager, Emitter};
+use tauri::menu::{Menu, MenuItem, Submenu, PredefinedMenuItem};
 use enigo::{Enigo, Keyboard, Settings, Key, Direction};
 use std::thread;
 use std::time::Duration;
@@ -48,10 +49,60 @@ pub fn run() {
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_global_shortcut::Builder::new().build())
         .plugin(tauri_plugin_clipboard_manager::init())
+        .plugin(tauri_plugin_store::Builder::new().build())
         .invoke_handler(tauri::generate_handler![simulate_paste])
         .setup(|app| {
             // ウィンドウを取得
-            let _window = app.get_webview_window("main").unwrap();
+            let window = app.get_webview_window("main").unwrap();
+
+            // メニューを作成
+            let settings_item = MenuItem::with_id(app, "settings", "Settings...", true, Some("CmdOrCtrl+,"))?;
+
+            let app_submenu = Submenu::with_items(
+                app,
+                "Safetype",
+                true,
+                &[
+                    &PredefinedMenuItem::about(app, Some("About Safetype"), None)?,
+                    &PredefinedMenuItem::separator(app)?,
+                    &settings_item,
+                    &PredefinedMenuItem::separator(app)?,
+                    &PredefinedMenuItem::services(app, None)?,
+                    &PredefinedMenuItem::separator(app)?,
+                    &PredefinedMenuItem::hide(app, None)?,
+                    &PredefinedMenuItem::hide_others(app, None)?,
+                    &PredefinedMenuItem::separator(app)?,
+                    &PredefinedMenuItem::quit(app, None)?,
+                ],
+            )?;
+
+            let edit_submenu = Submenu::with_items(
+                app,
+                "Edit",
+                true,
+                &[
+                    &PredefinedMenuItem::undo(app, None)?,
+                    &PredefinedMenuItem::redo(app, None)?,
+                    &PredefinedMenuItem::separator(app)?,
+                    &PredefinedMenuItem::cut(app, None)?,
+                    &PredefinedMenuItem::copy(app, None)?,
+                    &PredefinedMenuItem::paste(app, None)?,
+                    &PredefinedMenuItem::select_all(app, None)?,
+                ],
+            )?;
+
+            let menu = Menu::with_items(app, &[&app_submenu, &edit_submenu])?;
+            app.set_menu(menu)?;
+
+            // メニューイベントをハンドル
+            let window_clone = window.clone();
+            app.on_menu_event(move |_app, event| {
+                if event.id().as_ref() == "settings" {
+                    // フロントエンドに設定画面を開くよう通知
+                    window_clone.emit("open-settings", ()).unwrap();
+                }
+            });
+
             Ok(())
         })
         .on_window_event(|window, event| {
