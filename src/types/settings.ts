@@ -1,7 +1,7 @@
 // 設定の型定義
 export interface AppSettings {
   shortcuts: {
-    toggleWindow: string   // default: "CommandOrControl+Shift+Space"
+    toggleWindow: string   // default: "Control+Semicolon"
     submitPaste: string    // default: "CommandOrControl+Enter"
   }
   appearance: {
@@ -12,7 +12,7 @@ export interface AppSettings {
 // デフォルト設定
 export const DEFAULT_SETTINGS: AppSettings = {
   shortcuts: {
-    toggleWindow: 'CommandOrControl+Shift+Space',
+    toggleWindow: 'Control+Semicolon',
     submitPaste: 'CommandOrControl+Enter',
   },
   appearance: {

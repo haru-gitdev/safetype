@@ -42,10 +42,14 @@ function keyEventToShortcut(e: KeyboardEvent): { accelerator: string; displayKey
     return null
   }
 
-  // 修飾キー
-  if (e.ctrlKey || e.metaKey) {
-    parts.push('CommandOrControl')
-    displayParts.push(isMac ? '⌘' : 'Ctrl')
+  // 修飾キー（Ctrl と Cmd を別々に扱う）
+  if (e.metaKey) {
+    parts.push('Command')
+    displayParts.push('⌘')
+  }
+  if (e.ctrlKey) {
+    parts.push('Control')
+    displayParts.push('^')
   }
   if (e.altKey) {
     parts.push('Alt')
@@ -163,7 +167,9 @@ function formatShortcut(shortcut: string): string {
   return shortcut
     .split('+')
     .map(part => {
-      if (part === 'CommandOrControl') return isMac ? '⌘' : 'Ctrl'
+      if (part === 'CommandOrControl') return isMac ? '⌘' : 'Ctrl'  // 互換性のため残す
+      if (part === 'Command') return '⌘'
+      if (part === 'Control') return '^'
       if (part === 'Shift') return isMac ? '⇧' : 'Shift'
       if (part === 'Alt') return isMac ? '⌥' : 'Alt'
       return KEY_DISPLAY_NAMES[part] || part
