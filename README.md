@@ -17,7 +17,7 @@ A floating text editor you can summon from anywhere with a global hotkey. Write 
 
 ## Features
 
-- :keyboard: **Global Hotkey** - Press `Cmd+Shift+Space` to summon from any app
+- :keyboard: **Global Hotkey** - Press `Ctrl+;` to summon from any app (customizable)
 - :clipboard: **One-Action Paste** - `Cmd+Enter` copies and pastes to the previous app
 - :pushpin: **Always on Top** - Never loses focus to other windows
 - :x: **Esc to Cancel** - Changed your mind? Just close it
@@ -56,7 +56,7 @@ bun run tauri build
 
 ## Usage
 
-1. Press `Cmd+Shift+Space` to open the editor
+1. Press `Ctrl+;` to open the editor
 2. Type your text
 3. Press `Cmd+Enter` or click "Paste" to send text to the previous app
 4. Press `Esc` to cancel
@@ -65,7 +65,7 @@ bun run tauri build
 
 | Shortcut | Action |
 |----------|--------|
-| `Cmd+Shift+Space` | Open/close the editor |
+| `Ctrl+;` | Open/close the editor |
 | `Cmd+Enter` | Copy and paste to previous app |
 | `Esc` | Cancel and close |
 
@@ -86,7 +86,7 @@ Without this permission, the app cannot paste text into other applications.
 
 ## Roadmap
 
-- [ ] Settings UI with customizable hotkeys
+- [x] Settings UI with customizable hotkeys
 - [ ] Windows support
 - [ ] Code signing and notarization
 - [ ] Homebrew Cask distribution
