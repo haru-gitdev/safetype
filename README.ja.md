@@ -29,7 +29,12 @@
 
 1. [Releases](https://github.com/haru-gitdev/safetype/releases) から最新の `.dmg` をダウンロード
 2. DMGを開いて `Safetype.app` をアプリケーションフォルダにドラッグ
-3. 初回起動時にアクセシビリティ権限を許可:
+3. **macOSに「アプリが壊れている」と表示された場合**、ターミナルで以下を実行:
+   ```bash
+   xattr -cr /Applications/Safetype.app
+   ```
+   App Store外で配布されているアプリでは正常な動作です。
+4. 初回起動時にアクセシビリティ権限を許可:
    - **システム設定 > プライバシーとセキュリティ > アクセシビリティ** を開く
    - `Safetype.app` を追加して有効化
 
