@@ -29,10 +29,12 @@ A floating text editor you can summon from anywhere with a global hotkey. Write 
 
 1. Download the latest `.dmg` from [Releases](https://github.com/haru-gitdev/safetype/releases)
 2. Open the DMG and drag `Safetype.app` to your Applications folder
-3. **If macOS shows "this app is damaged" or blocks the app**, run this in Terminal:
-   ```bash
-   xattr -cr /Applications/Safetype.app
-   ```
+3. **If macOS shows "this app is damaged" or blocks the app:**
+   - Right-click (or Control-click) `Safetype.app` in the Applications folder
+   - Select **"Open"** from the context menu
+   - Click **"Open"** in the confirmation dialog
+   - You only need to do this once — after that, the app opens normally
+   
    This is normal for apps distributed outside the App Store without code signing.
 4. On first launch, grant Accessibility permission:
    - Go to **System Settings > Privacy & Security > Accessibility**
